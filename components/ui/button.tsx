@@ -38,7 +38,8 @@ const Button = React.forwardRef<HTMLAnchorElement, ButtonProps>(
   ({ className, variant, size, asChild = false, ...props }, ref) => {
     return (
       <a
-        href="mailto:mateenunez@gmail.com"
+        href={props.href || "mailto:mateenunez@gmail.com"}
+        download={props.download}
         className={cn(buttonVariants({ variant, size, className }))}
         ref={ref}
         target="_blank"

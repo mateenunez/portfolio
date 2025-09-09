@@ -13,10 +13,6 @@ const socialLinks = [
     value: "mateenunez@gmail.com",
   },
   {
-    label: "Twitter",
-    href: "https://x.com/mateenunez",
-  },
-  {
     label: "LinkedIn",
     href: "https://www.linkedin.com/in/mateenunez/",
   },
@@ -41,7 +37,7 @@ const experiences = [
     company: "E-Learning FRCU",
     period: "2023 - ",
     description:
-      "Actualmente formo parte de el equipo de E-Learning dentro de la Universidad Tecnológica Nacional con el objetivo de subir contenido educativo a dicha plataforma. Mi rol en el equipo es el de editar los videos a subir y organizar los materiales de estudio.",
+      "Actualmente formo parte del equipo de E-Learning dentro de la Universidad Tecnológica Nacional con el objetivo de subir contenido educativo a dicha plataforma. Mi rol en el equipo es el de editar los videos a subir y organizar los materiales de estudio.",
   },
   {
     company: "Freelance",
@@ -94,7 +90,7 @@ function Header({ isLoaded }: { isLoaded: boolean }) {
         Mateo Nuñez
       </h1>
       <p className="text-sm font-medium text-[#62748e]">
-        Ingeniero en Sistemas de Información (estudiante)
+        Estudiante de Ingeniería en Sistemas de Información
       </p>
     </header>
   );
@@ -114,8 +110,8 @@ function Description({ isLoaded }: { isLoaded: boolean }) {
         <p className="text-sm text-neutral-900">
           Estudiante de Ingeniería en Sistemas con 3 años de experiencia en
           proyectos académicos y personales, adaptándome activamente a las
-          mejores tecnologías para desarrollarme profesionalmente y contribuir
-          exitosamente a soluciones innovadoras.
+          mejores tecnologías para contribuir exitosamente a soluciones
+          innovadoras.
         </p>
       </div>
     </div>
@@ -125,7 +121,7 @@ function Description({ isLoaded }: { isLoaded: boolean }) {
 function CTAButtons({ isLoaded }: { isLoaded: boolean }) {
   return (
     <div
-      className={`flex flex-col sm:flex-row items-center justify-center sm:items-center gap-3 sm:gap-2.5 transition-all duration-500 ease-out ${
+      className={`flex flex-col sm:flex-row items-start justify-start sm:items-center gap-3 sm:gap-2.5 transition-all duration-500 ease-out ${
         isLoaded
           ? "opacity-100 blur-none translate-y-0"
           : "opacity-0 blur-[4px] translate-y-2"
@@ -158,13 +154,41 @@ function CTAButtons({ isLoaded }: { isLoaded: boolean }) {
           </g>
         </svg>
       </Button>
+      <Button
+        variant="default"
+        className="w-full sm:w-auto inline-flex h-[34px] items-center justify-center gap-2.5 pl-4 pr-3 py-0 bg-[#020618] rounded-[99px] hover:bg-[#020618]/90 text-slate-50 "
+        download="/CVMateo.pdf"
+        href=""
+      >
+        <span className="font-medium text-[13px] leading-5 text-slate-50">
+          Currículum
+        </span>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="12"
+          height="12"
+          viewBox="0 0 12 12"
+          className="text-slate-50"
+        >
+          <title>chevron-down</title>
+          <g
+            fill="none"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth="1.5"
+            stroke="currentColor"
+          >
+            <polyline points="1.75 4.25 6 8.5 10.25 4.25"></polyline>
+          </g>
+        </svg>
+      </Button>
     </div>
   );
 }
 
 function Experience({
   isLoaded,
-  experiences,
+  experiences: any,
 }: {
   isLoaded: boolean;
   experiences: typeof experiences;
@@ -198,7 +222,7 @@ function Experience({
 
 function Proyects({
   isLoaded,
-  proyects,
+  proyects: any,
 }: {
   isLoaded: boolean;
   proyects: typeof proyects;
@@ -263,7 +287,7 @@ function SocialLinks({
       style={{ transitionDelay: "500ms" }}
     >
       <h2 className="text-sm text-neutral-400 uppercase">MIS REDES SOCIALES</h2>
-      <div className="flex flex-wrap gap-6">
+      <div className="flex flex-wrap gap-6 justify-center">
         {links.map((link) => (
           <div key={link.label} className="group">
             {link.label === "Email" ? (
